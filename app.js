@@ -3,16 +3,16 @@ var app = express();
 
 app.set('view engine', 'ejs');
 
-app.get('/moda', function(req, res){
-    res.render("secao/moda");
-});
-
-app.get('/vlogs', function(req, res){
-    res.render("secao/vlogs");
-});
-
 app.get('/', function(req, res){
-    res.send("<html><title>♥Valentine's</title></title><body><h1>Natalia Silva</h1></body></html>");
+    res.render("home/index");
+});
+
+app.get('/form_add_noticias', function(req, res){
+    res.render("admin/form_add_leitoras");
+});
+
+app.get('/noticias', function(req, res){
+    res.render("noticias/noticias");
 });
 
 app.listen(3000, function(){
