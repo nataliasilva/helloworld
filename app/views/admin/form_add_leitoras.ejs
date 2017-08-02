@@ -7,6 +7,18 @@
 	<body>
 
 		<h1><center>Cadastro de Leitoras Lindas!</center></h1>
+		<br/>
+
+		<form action="/noticias/salvar" method="POST">
+			<label>Título</label>
+			<input type="text" id="titulo" name="titulo" placeholder="Titulo da noticia"/>
+			<br/>
+			<label>Leitoras Lindas!</label>
+			<textarea id="noticia" name="noticia" rows="5" cols="30"></textarea>
+			<br/>
+			<input type ="submit" name="enviar"/>
+
+		</form>
 
 	</body>
 </html>
