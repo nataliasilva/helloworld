@@ -8,6 +8,7 @@ module.exports = function(application){
     var noticiasModels = application.app.models.noticiasModels;
 
     noticiasModels.getNoticias(connection,  function(error, result){
+            console.log(error);
             res.render("noticias/noticias", { noticias : result })
         });
 
