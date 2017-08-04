@@ -10,7 +10,7 @@ app.set('views', './app/views');
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
-consign()
+consign({ verbose: false })
     .include('app/routs')
     .then('config/dbconnection.js')
     .then('app/models')
