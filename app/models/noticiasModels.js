@@ -8,8 +8,9 @@ module.exports = function(){
         connection.query('select * from noticias where id_noticias = 2', callback);
     }
 
-    this.salvarNoticias = function(noticias, connection, callback){
-        connection.query('insert into noticia set ?', noticias, callback);
+    this.salvarNoticia = function(noticias, connection, callback){
+       // console.log(noticias);
+        connection.query('insert into noticias set ?', noticias, callback);
     }
     return this;
 }
