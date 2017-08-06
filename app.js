@@ -1,8 +1,8 @@
 var app = require('./config/server');
 var msg = require('./mod_test');
 
-app.listen(3001, function(){
-    console.log("Servidor rodando com Express");
+app.listen(app.get('porta'), function(){
+    console.log(`Servidor rodando com Express na Porta ${app.get('porta')}`);
 });
 
 //antes do consign
