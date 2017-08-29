@@ -1,15 +1,20 @@
 //var dbconnection = require('../../config/dbconnection'); antes do consign
 
-module.exports = function(application){
-    
-    application.get('/noticias', function(req, res){
-    
-    var connection = application.config.dbconnection();
-    var noticiasModels = application.app.models.noticiasModels;
+module.exports = (application) => {
 
-    noticiasModels.getNoticias(connection,  function(error, result){
-            res.render("noticias/noticias", { noticias : result });
-        });
+    application.get('/noticias', (req, res) => {
 
+        var connection = application.config.dbconnection();
+        var noticiasModels = new application.app.models.noticiasModels;
+
+        noticiasModels.getNoticias(connection, (error, result) =>  res.render("noticias/noticias", { noticias : result }));
+    });
+
+    application.get('/teste', (req, res) => {
+
+        var connection = application.config.dbconnection();
+        var noticiasModels = new application.app.models.noticiasModels;
+
+        noticiasModels.getNoticias(connection, (error, result) => res.status(200).json(result));
     });
 };

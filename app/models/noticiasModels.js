@@ -1,16 +1,17 @@
-module.exports = function(){
+function Noticias() {
 
-    this.getNoticias = function(connection, callback){
-        connection.query('select * from noticias', callback);
-    }
+}
 
-    this.getNoticia = function(connection, callback){
-        connection.query('select * from noticias where id_noticias = 2', callback);
-    }
+Noticias.prototype.getNoticias =  (connection, callback) => connection.query('select * from noticias', callback);
 
-    this.salvarNoticia = function(noticias, connection, callback){
-       // console.log(noticias);
-        connection.query('insert into noticias set ?', noticias, callback);
-    }
-    return this;
+
+Noticias.prototype.getNoticia = (connection, callback) => connection.query('select * from noticias where id_noticias = 2', callback);
+
+
+Noticias.prototype.salvarNoticia = (noticias, connection, callback) => connection.query('insert into noticias set ?', noticias, callback);
+    //console.log(query);
+
+
+module.exports = function() {
+    return Noticias;
 }
